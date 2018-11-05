@@ -8,6 +8,7 @@ echo "->开始监听队列\n";
 //实时监听
 while(1){
     $list_length = $redis->llen('seckill_list');
+    echo "============ ".date('Y-m-d H:i:s',time())." =============\n";
     echo "->处理队列数量:".$list_length."\n";
     if($list_length <= 0){
         echo "Done:当前没有可处理的订单!\n";
